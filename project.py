@@ -42,7 +42,7 @@ print(passed_student)
 
 class_student = [("Truth", 100),("Tim", 98.6), ("Mosh", 107)]
 
-
+# Same output different code
 
 def process_student(student_list):
     curve_score = []
