@@ -44,15 +44,10 @@ quantities = [5, 1, 12, 3, 0, 6, 20, 15]
 fruit_quantity = list(zip(fruits, quantities))
 fruit_in_stock = [fruit for fruit in fruit_quantity if fruit[1] > 0]
 for quantity, fruit in enumerate(fruit_in_stock):
+    unit_map = {1: "one", 2: "two", 3: "three"}
     in_stock = "In stock" if fruit[1] > 0 else "out of stock"
-    if fruit[1] == 1:
-        print(f"{quantity}, {fruit[0]} - {fruit[1]} one unit left")
-
-    elif fruit[1] == 2:
-        print(f"{quantity}, {fruit[0]} - {fruit[1]} two unit left")
-
-    elif fruit[1] == 3:
-        print(f"{quantity}, {fruit[0]} - {fruit[1]} three unit left")
+    if fruit[1] in unit_map:
+        print(f"{quantity}, {fruit[0]} - {fruit[1]} {unit_map[fruit[1]]} unit left")
 
     else:
         print(f"{quantity}, {fruit[0]} - {fruit[1]} {in_stock}")
